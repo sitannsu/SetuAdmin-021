@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import Home  from './src/Home';
 import Alluser  from './src/Home/Alluser';
+import OverView  from './src/Home/OverView';
 import UserList  from './src/Home/UserList';
+import AllUserList  from './src/Home/AllUserList';
+
+
 
 import Dashboard  from './src/Dashboard';
 
@@ -24,10 +28,10 @@ class App extends Component {
           <div className="AppSwitch">
           <Switch>
             <Route exact path="/" component={Dashboard}/>
-            <Route path="/items" component={Alluser}/>
-            <Route path="/UserList" component={UserList}/>
+            <Route path="/members/:id" component={Alluser}/>
+            <Route path="/UserList" component={AllUserList}/>
             
-            <Route path="/category" component={Category}/>
+            <Route path="/overview" component={OverView}/>
           </Switch>
           </div>
           </div>

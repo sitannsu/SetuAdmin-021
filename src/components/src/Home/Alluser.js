@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
+import FamilyMember from './FamilyMember';
  
-
+import axios from 'axios';
+const  header =  {
+    'accept-type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  }
 class Alluser extends Component {
 
 
@@ -10,12 +15,35 @@ class Alluser extends Component {
         this.state = {
              
             headerList: ["Family Members","House","Profession","Health","Digital Locker"],
-            selectedService:"Family Members"
+            selectedService:"Family Members",
+            data:{}
             
         }
  
 
 
+    }
+
+    componentDidMount() {
+        const {id} = this.props.match.params
+
+        console.log("ididididid",this.props.match.params.id) // "foo"
+
+        const {foo} = this.props.location.state
+
+        console.log(foo) // "bar"
+
+
+     
+            axios.get("http://13.233.212.234:3000/api/usersSetu/"+this.props.match.params.id, {headers : header})
+            .then(response => {
+        
+        
+              this.setState({
+                data: response.data
+              });
+                
+            })
     }
     selectService(service) {
         console.log("serviceservice",service);
@@ -28,9 +56,98 @@ class Alluser extends Component {
     }
     renderAllSidebar(data) {
         var selectedserviceGroupId = this.state.serviceGroupId;
+        console.log("selectedService----",this.state.selectedService);
         return (data === this.state.selectedService) ? 'selected-service-tab' : 'service-tab';
     }
+
+    renderMember() {
+ 
+        if(this.state.data.members != undefined){
+
+            return(
+            
+                this.state.data.members.map((slot)=>{
+                    return(
+                        <div className='memberDeatils' >
+                           
+                        
+                         <p> {slot.name}</p>
+
+                         <p>  dob : {slot.dob}</p>
+
+                         <p> nationality : {slot.nationality}</p>
+                         <p> spouseName : {slot.spouseName}</p>
+
+                         
+                   
+                             
+                        </div>
+                    )
+                })
+            );
+        }
+
+      }
+
+
+      renderHouse() {
+ 
+        if(this.state.data.houseDetails != undefined){
+            var addressTemp = this.state.data.houseDetails.address.address1 + " "+
+            this.state.data.houseDetails.address.panchayata+" "+
+            this.state.data.houseDetails.address.block+" "+
+            this.state.data.houseDetails.address.district;
+
+            return(
+                <div className='memberDeatils' >
+                           
+                        
+                <p> Address : {addressTemp}</p>
+
+                <p>  houseSqft : {this.state.data.houseDetails.houseSqft}</p>
+
+        
+
+                
+          
+                    
+               </div>
+                 
+            );
+        }
+
+      }
+
+      renderProfession() {
+ 
+        if(this.state.data.liveliHood != undefined){
+   
+
+            return(
+                <div className='memberDeatils' >
+                           
+                        
+                <p> profession : {this.state.data.liveliHood.profession.professionType}</p>
+
+                <p>  Land Area : {this.state.data.liveliHood.landDetails.landArea}</p>
+
+                <p>  Is Irrigated : {this.state.data.liveliHood.landDetails.isIrrigated}</p>
+
+                <p>  Irrigation Type : {this.state.data.liveliHood.landDetails.irrigationType}</p>
+
+        
+
+                
+          
+                    
+               </div>
+                 
+            );
+        }
+
+      }
     render() {
+
         return (
             <div className="allUserDv">
                 <div className="allUserDvHeadrDv">
@@ -53,8 +170,13 @@ class Alluser extends Component {
           
           </div>
           <div className="allUserDvHeadrDvLower">
-
+          <div className="divMember">
+          {this.state.selectedService == 'Family Members' &&this.renderMember()}
+          {this.state.selectedService == 'House' &&this.renderHouse()}
+          {this.state.selectedService == 'Profession' &&this.renderProfession()}
           </div>
+          </div>
+   
           </div>
         );
       }

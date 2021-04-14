@@ -4,6 +4,16 @@ import './Home.css';
 
 class Home extends Component {
 
+  constructor(props) {
+    super(props);
+  
+     
+  }
+
+
+  
+
+
     render() {
         return (
             <div className="AppFullHome">
@@ -11,10 +21,10 @@ class Home extends Component {
          
             <ul className="AppLinkul">
               <li className="AppLink">
-                <Link to="/items" style={{ textDecoration: 'none' }} className="homeLink">ALL USERS</Link>
+                <Link to={{ pathname: '/UserList', state: { fromNotifications: 'bar'} }}  style={{ textDecoration: 'none' }} className="homeLink"  >ALL USERS</Link>
               </li>
               <li className="AppLink">
-                <Link to="/category" style={{ textDecoration: 'none' }} className="homeLink">APPLICATION STATUS</Link>
+                <Link to="/overview" style={{ textDecoration: 'none' }} className="homeLink">OVERVIEW</Link>
               </li>
             </ul>
           

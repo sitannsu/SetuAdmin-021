@@ -43,10 +43,12 @@ font-size: 35px;;
 
 .AppFullHome{
     background:#B7CEB3;
+    width: 148px;
 }
 
 .AppLink{
     margin: 10px;
+    padding-top: 10px;
 
 }
 
@@ -87,4 +89,28 @@ font-size: 35px;;
     width: 100%;
     min-height: 400px;
     border: 1px solid rgb(12, 12, 12);
+}
+
+.fullAddressList{
+    display: inline;
+}
+
+.memberDeatils{
+    width: 100%;
+    padding: 13px;
+    margin: 2px;
+    margin: 6px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+}
+
+.AppSwitch{
+    width: 100%;
+}
+.fullAddressList{
+    width: 100%;   
+}
+
+ul li
+{
+    list-style-type: none;
 }

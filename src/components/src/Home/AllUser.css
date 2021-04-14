@@ -1,0 +1,20 @@
+.hasToiletP{
+    width: 100px;
+    height: 100px;
+}
+
+.firstDv{
+    display: flex;
+}
+
+.toiletDv{
+    width: 100%;
+}
+
+.ovDeatils{
+    width: 93%;
+    padding: 13px;
+    margin: 2px;
+    margin: 6px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+}

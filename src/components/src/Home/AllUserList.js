@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import axios from 'axios';
-import './Home.css';
+import '../Home.css';
 const  header =  {
   'accept-type': 'application/json',
   'Access-Control-Allow-Origin': '*'
 }
 
 
-class Dashboard extends Component {
+class AllUserList extends Component {
 
   constructor(props) {
     super(props);
@@ -73,4 +73,4 @@ renderTimeSlot() {
 
 }
 
-export default Dashboard;
+export default AllUserList;

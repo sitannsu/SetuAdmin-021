@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@progress/kendo-react-charts": "^4.5.0",
+    "axios": "^0.21.1",
+    "igniteui-react-charts": "^16.13.1",
+    "igniteui-react-core": "^16.13.1",
     "react": "^16.2.0",
+    "react-axios": "^2.0.4",
     "react-dom": "^16.2.0",
+    "react-minimal-pie-chart": "^8.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0"
   },

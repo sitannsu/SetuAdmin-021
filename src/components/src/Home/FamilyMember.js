@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import axios from 'axios';
-import './Home.css';
+import './AllUser.css';
 const  header =  {
   'accept-type': 'application/json',
   'Access-Control-Allow-Origin': '*'
 }
 
 
-class Dashboard extends Component {
+class FamilyMember extends Component {
 
   constructor(props) {
     super(props);
@@ -58,9 +58,9 @@ renderTimeSlot() {
         return (
             <div className="AppFull">
               <div className="fullAddressList">
-              {
-                this.renderTimeSlot()
-              }
+             
+                ffffff
+         
 
              </div>
 
@@ -73,4 +73,4 @@ renderTimeSlot() {
 
 }
 
-export default Dashboard;
+export default FamilyMember;
