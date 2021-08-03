@@ -35,7 +35,7 @@ class Alluser extends Component {
 
 
      
-            axios.get("http://13.233.212.234:3000/api/usersSetu/"+this.props.match.params.id, {headers : header})
+            axios.get("http://3.108.221.3:3000/api/usersSetu/"+this.props.match.params.id, {headers : header})
             .then(response => {
         
         

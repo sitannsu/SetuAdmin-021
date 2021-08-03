@@ -21,7 +21,7 @@ class AllUserList extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://13.233.212.234:3000/api/usersSetu", {headers : header})
+    axios.get("http://3.108.221.3:3000/api/usersSetu", {headers : header})
     .then(response => {
 
 
