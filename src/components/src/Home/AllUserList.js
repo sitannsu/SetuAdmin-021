@@ -74,7 +74,7 @@ renderTimeSlot() {
                         <div className='memberDeatils' >
                  
                 
-                <Link to ={{ pathname: '/members/'+slot._id, state: { fromNotifications: 'bar'} }}  > 
+                <Link to ={{ pathname: '/members/'+slot._id, state: { fromNotifications: 'bar'} }} style={{ textDecoration: 'none' }} > 
                      <div className="second-detailsP">
                         <div className="second-details">
                         <div className="nameShortcut">{slot.name.substring(0, 1) }</div>

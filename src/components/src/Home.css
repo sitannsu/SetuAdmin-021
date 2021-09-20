@@ -67,6 +67,9 @@ font-size: 35px;;
 .homeLink{
     color: #000;
 }
+.homeLinkActive{
+    color: #FFF;
+}
 
 .service-tab{
     border: 1px solid rgb(12, 12, 12);

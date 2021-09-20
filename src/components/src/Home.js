@@ -37,7 +37,7 @@ class Home extends Component {
                 <Link to={{ pathname: '/UserList', state: { fromNotifications: 'bar'} }}  style={{ textDecoration: 'none' }} className="homeLink"  >ALL USERS</Link>
               </li>
               <li className={`${this.state.clickedLink ? 'AppLink' : 'AppLinkActive'}`} onClick= {(e) => this.sideHedr(false)}>
-                <Link to="/overview" style={{ textDecoration: 'none' }} className="homeLink">OVERVIEW</Link>
+                <Link to="/overview" style={{ textDecoration: 'none' }} className= {`${this.state.clickedLink ? 'homeLink' : 'homeLinkActive'}`}>OVERVIEW</Link>
               </li>
             </ul>
           
