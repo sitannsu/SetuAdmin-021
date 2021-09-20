@@ -7,10 +7,23 @@ class Home extends Component {
   constructor(props) {
     super(props);
   
-     
+    this.state = {
+      clickedLink: false,
+      password1: "",
+      password2: "",
+      error: ""
+    }
+    this.sideHedr = this.sideHedr.bind(this);
   }
 
 
+  sideHedr(data){
+    this.setState({
+      clickedLink: data
+    });
+    console.log("sideHedrsideHedr", this.state.clickedLink)
+
+  }
   
 
 
@@ -20,10 +33,10 @@ class Home extends Component {
 
          
             <ul className="AppLinkul">
-              <li className="AppLink">
+              <li className={`${this.state.clickedLink ? 'AppLinkActive' : 'AppLink'}`} onClick= {(e) => this.sideHedr(true)}>
                 <Link to={{ pathname: '/UserList', state: { fromNotifications: 'bar'} }}  style={{ textDecoration: 'none' }} className="homeLink"  >ALL USERS</Link>
               </li>
-              <li className="AppLink">
+              <li className={`${this.state.clickedLink ? 'AppLink' : 'AppLinkActive'}`} onClick= {(e) => this.sideHedr(false)}>
                 <Link to="/overview" style={{ textDecoration: 'none' }} className="homeLink">OVERVIEW</Link>
               </li>
             </ul>

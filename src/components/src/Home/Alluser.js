@@ -149,33 +149,8 @@ class Alluser extends Component {
     render() {
 
         return (
-            <div className="allUserDv">
-                <div className="allUserDvHeadrDv">
-
-         
-                                {   
-                                                     
-                                                    this.state.headerList.map((data) => {
-                                                        return (
-                                                            <div className={this.renderAllSidebar(data)}>
-                                                                 <div className= 'hedusrdv' onClick={() => { this.selectService(data) }}>
-                                                                     {data}
-                                                                 
-                                                                 </div>
-                                                            </div>
-                                                        )
-                                                    }
-                                                    )
-                                                    }
-          
-          </div>
-          <div className="allUserDvHeadrDvLower">
-          <div className="divMember">
-          {this.state.selectedService == 'Family Members' &&this.renderMember()}
-          {this.state.selectedService == 'House' &&this.renderHouse()}
-          {this.state.selectedService == 'Profession' &&this.renderProfession()}
-          </div>
-          </div>
+            <div className="allUserDvNew">
+                
    
           </div>
         );

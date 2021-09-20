@@ -19,7 +19,7 @@ class App extends Component {
           <div className='homeHeader'>
                 <div  className='homeHeaderLftIcn'></div>
                 <div  className='homeHeaderTxtdv'>
-                <p  className='homeHeaderTxtP'> Ganjam District Digital Platform </p>   
+                <p  className='homeHeaderTxtP'> Welcome to Setu App Dashboard </p>   
                 </div>
             </div>
           </header>
